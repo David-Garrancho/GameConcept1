@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://boq262bt2l5hg"]
+
+[ext_resource type="Script" path="res://us_player.gd" id="1_pr6am"]
+[ext_resource type="Texture2D" uid="uid://bolpe27ytq7a4" path="res://addons/character_sprites/USA skin.png" id="1_ywega"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixfrk"]
+radius = 105.7
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_ptgjv"]
+
+[node name="US player" type="CharacterBody2D"]
+position = Vector2(463, 340)
+script = ExtResource("1_pr6am")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+position = Vector2(71, -64)
+shape = SubResource("CircleShape2D_ixfrk")
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="PlayerAlive" type="Sprite2D" parent="Graphics"]
+position = Vector2(42, 41)
+texture = ExtResource("1_ywega")
+
+[node name="PlayerDead" type="Sprite2D" parent="Graphics"]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(15.5, 62)
+target_position = Vector2(0, 5000)
+collision_mask = 3
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamMP3_ptgjv")
+bus = &"sfx"
