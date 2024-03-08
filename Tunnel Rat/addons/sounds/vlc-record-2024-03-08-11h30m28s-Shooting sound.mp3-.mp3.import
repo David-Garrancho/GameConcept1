@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmlsxpbenpi65"
+path="res://.godot/imported/vlc-record-2024-03-08-11h30m28s-Shooting sound.mp3-.mp3-286e345caed035936fd50fb0a5ee7733.mp3str"
+
+[deps]
+
+source_file="res://addons/sounds/vlc-record-2024-03-08-11h30m28s-Shooting sound.mp3-.mp3"
+dest_files=["res://.godot/imported/vlc-record-2024-03-08-11h30m28s-Shooting sound.mp3-.mp3-286e345caed035936fd50fb0a5ee7733.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

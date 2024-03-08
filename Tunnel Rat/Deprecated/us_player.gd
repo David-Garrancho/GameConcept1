@@ -2,11 +2,9 @@ extends CharacterBody2D
 
 
 @export var speed: int = 200
-@export var run_speed: int = 300
+@export var run_speed: int = 500
 @export var Bullet :PackedScene 
 
-
-@onready var end_of_gun = $EndOfGun
 
 func _ready() -> void: 
 	pass
@@ -32,19 +30,31 @@ func _process(delta: float) -> void:
 	
 	look_at(get_global_mouse_position()) #Makes character aim in direction of mouse
 	
-func _unhandled_input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("shoot"):
 		shoot()
-		
-		
 
 func shoot():
-	var bullet_instance = Bullet.instantiate()
-	add_child(bullet_instance)
-	bullet_instance.global_position = end_of_gun.global_position
-	var target = get_global_mouse_position()
-	var direction_to_mouse = bullet_instance.global_position.direction_to(target).normalized()
-	bullet_instance.set_direction(direction_to_mouse)
-	$Shooting.play()
+	print("A shot was fired")
 	
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+#func _physics_process(delta):
+	# Add the gravity.
+#	if not is_on_floor():
+#		velocity.y += gravity * delta
+
+	# Handle Jump.
+#	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+#		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+#	var direction = Input.get_axis("ui_left", "ui_right")
+#	if direction:
+#		velocity.x = direction * SPEED
+#	else:
+#		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+#	move_and_slide()
