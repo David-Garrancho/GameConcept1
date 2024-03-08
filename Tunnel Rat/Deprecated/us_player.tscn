@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://boq262bt2l5hg"]
+
+[ext_resource type="Texture2D" uid="uid://bolpe27ytq7a4" path="res://addons/character_sprites/USA skin.png" id="1_ywega"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixfrk"]
+radius = 105.7
+
+[node name="US player" type="CharacterBody2D"]
+position = Vector2(463, 340)
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+position = Vector2(71, -64)
+shape = SubResource("CircleShape2D_ixfrk")
+
+[node name="PlayerAlive" type="Sprite2D" parent="."]
+position = Vector2(42, 41)
+texture = ExtResource("1_ywega")

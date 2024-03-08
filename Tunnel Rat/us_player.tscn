@@ -1,34 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://boq262bt2l5hg"]
+[gd_scene load_steps=6 format=3 uid="uid://bogjxockhc7ft"]
 
-[ext_resource type="Script" path="res://us_player.gd" id="1_pr6am"]
-[ext_resource type="Texture2D" uid="uid://bolpe27ytq7a4" path="res://addons/character_sprites/USA skin.png" id="1_ywega"]
+[ext_resource type="Script" path="res://us_player.gd" id="1_ghg5m"]
+[ext_resource type="PackedScene" uid="uid://4oqoav3s7krh" path="res://bullet.tscn" id="2_5mtq7"]
+[ext_resource type="Texture2D" uid="uid://bolpe27ytq7a4" path="res://addons/character_sprites/USA skin.png" id="2_kfr5n"]
+[ext_resource type="AudioStream" uid="uid://dmlsxpbenpi65" path="res://addons/sounds/vlc-record-2024-03-08-11h30m28s-Shooting sound.mp3-.mp3" id="3_fif4v"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ixfrk"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_13by8"]
 radius = 105.7
 
-[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_ptgjv"]
-
-[node name="US player" type="CharacterBody2D"]
-position = Vector2(463, 340)
-script = ExtResource("1_pr6am")
+[node name="us_player" type="CharacterBody2D"]
+position = Vector2(176.726, 190.642)
+script = ExtResource("1_ghg5m")
+Bullet = ExtResource("2_5mtq7")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2(71, -64)
-shape = SubResource("CircleShape2D_ixfrk")
+position = Vector2(-12.7261, -7.64246)
+shape = SubResource("CircleShape2D_13by8")
 
-[node name="Graphics" type="Node2D" parent="."]
+[node name="us_player" type="Sprite2D" parent="."]
+position = Vector2(93.2739, 19.3575)
+rotation = -1.57079
+texture = ExtResource("2_kfr5n")
 
-[node name="PlayerAlive" type="Sprite2D" parent="Graphics"]
-position = Vector2(42, 41)
-texture = ExtResource("1_ywega")
+[node name="EndOfGun" type="Marker2D" parent="."]
+position = Vector2(346.274, 45.3575)
 
-[node name="PlayerDead" type="Sprite2D" parent="Graphics"]
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(15.5, 62)
-target_position = Vector2(0, 5000)
-collision_mask = 3
-
-[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamMP3_ptgjv")
-bus = &"sfx"
+[node name="Shooting" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fif4v")
+volume_db = -5.0
