@@ -1,7 +1,6 @@
 SmartShape2D
 ---
-![Sample Image]( ./addons/rmsmartshape/documentation/imgs/sample.png )
-![Sample Gif]( ./addons/rmsmartshape/documentation/imgs/sample.gif )
+![smart_shape_2d](https://github.com/David-Garrancho/GameConcept1/assets/126564115/66d3122a-036f-460a-855d-84ea0bc10416)
 
 # About
 **This is the GODOT 4 version of this plugin.
