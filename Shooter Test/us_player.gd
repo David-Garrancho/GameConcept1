@@ -7,6 +7,9 @@ extends CharacterBody2D
 
 
 @onready var end_of_gun = $EndOfGun
+@onready var gun_direction = $GunDirection
+
+signal player_fired_bullet(bullet, position, direction)
 
 func _ready() -> void: 
 	pass
@@ -14,7 +17,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void: 
 	var movement_direction := Vector2.ZERO
-	if Input.is_action_pressed("move_up"): #Assists in direction of movement
+	if Input.is_action_pressed("move_up"):
 		movement_direction.y = -1
 	if Input.is_action_pressed("move_down"):
 		movement_direction.y = 1
@@ -25,12 +28,12 @@ func _process(delta: float) -> void:
 		
 	velocity = movement_direction * speed
 	
-	if Input.is_action_pressed("run"): #Handles running input
+	if Input.is_action_pressed("run"):
 		velocity = movement_direction * run_speed
 	
-	move_and_slide() #Allows character on screen to move
+	move_and_slide()
 	
-	look_at(get_global_mouse_position()) #Makes character aim in direction of mouse
+	look_at(get_global_mouse_position())
 	
 func _unhandled_input(event):
 	if event.is_action_released("shoot"):
@@ -40,11 +43,9 @@ func _unhandled_input(event):
 
 func shoot():
 	var bullet_instance = Bullet.instantiate()
-	add_child(bullet_instance)
-	bullet_instance.global_position = end_of_gun.global_position
-	var target = get_global_mouse_position()
-	var direction_to_mouse = bullet_instance.global_position.direction_to(target).normalized()
-	bullet_instance.set_direction(direction_to_mouse)
-	$Shooting.play()
-	
+	#var target = get_global_mouse_position()
+	#var direction_to_mouse = end_of_gun.global_position.direction_to(target).normalized()
+	var direction = gun_direction.global_position - end_of_gun.global_position
+	emit_signal("player_fired_bullet", bullet_instance, end_of_gun.global_position, direction)
+	$ShootingSound.play()
 
