@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://us_player.gd" id="1_ghg5m"]
 [ext_resource type="PackedScene" uid="uid://4oqoav3s7krh" path="res://bullet.tscn" id="2_5mtq7"]
 [ext_resource type="Texture2D" uid="uid://bolpe27ytq7a4" path="res://addons/character_sprites/USA skin.png" id="2_kfr5n"]
-[ext_resource type="AudioStream" uid="uid://dmlsxpbenpi65" path="res://addons/sounds/vlc-record-2024-03-08-11h30m28s-Shooting sound.mp3-.mp3" id="3_fif4v"]
+[ext_resource type="AudioStream" uid="uid://dmlsxpbenpi65" path="res://addons/sounds/vlc-record-2024-03-08-11h30m28s-Shooting sound.mp3-.mp3" id="4_rd03t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13by8"]
 radius = 105.7
 
-[node name="us_player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D"]
 position = Vector2(176.726, 190.642)
 script = ExtResource("1_ghg5m")
 Bullet = ExtResource("2_5mtq7")
@@ -17,14 +17,19 @@ Bullet = ExtResource("2_5mtq7")
 position = Vector2(-12.7261, -7.64246)
 shape = SubResource("CircleShape2D_13by8")
 
-[node name="us_player" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(93.2739, 19.3575)
-rotation = -1.57079
+rotation = -1.74533
 texture = ExtResource("2_kfr5n")
 
 [node name="EndOfGun" type="Marker2D" parent="."]
-position = Vector2(346.274, 45.3575)
+position = Vector2(346.274, 0.358002)
+rotation = -0.174533
 
-[node name="Shooting" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_fif4v")
-volume_db = -5.0
+[node name="GunDirection" type="Marker2D" parent="."]
+position = Vector2(352.274, -0.641998)
+rotation = -0.174533
+
+[node name="ShootingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rd03t")
+volume_db = -10.0
