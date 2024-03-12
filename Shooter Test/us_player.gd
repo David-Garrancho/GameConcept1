@@ -8,6 +8,8 @@ extends CharacterBody2D
 
 @onready var end_of_gun = $EndOfGun
 @onready var gun_direction = $GunDirection
+@onready var attack_cooldown = $AttackCooldown
+@onready var animation_player = $AnimationPlayer
 
 signal player_fired_bullet(bullet, position, direction)
 
@@ -42,10 +44,12 @@ func _unhandled_input(event):
 		
 
 func shoot():
-	var bullet_instance = Bullet.instantiate()
-	#var target = get_global_mouse_position()
-	#var direction_to_mouse = end_of_gun.global_position.direction_to(target).normalized()
-	var direction = gun_direction.global_position - end_of_gun.global_position
-	emit_signal("player_fired_bullet", bullet_instance, end_of_gun.global_position, direction)
-	$ShootingSound.play()
+	if attack_cooldown.is_stopped():
+		var bullet_instance = Bullet.instantiate()
+		var direction = gun_direction.global_position - end_of_gun.global_position
+		emit_signal("player_fired_bullet", bullet_instance, end_of_gun.global_position, direction)
+		$ShootingSound.play()
+		attack_cooldown.start()
+		animation_player.play("muzzle_flash")
+		
 
