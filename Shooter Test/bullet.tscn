@@ -24,4 +24,5 @@ texture = ExtResource("1_q56qw")
 wait_time = 0.5
 one_shot = true
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]
