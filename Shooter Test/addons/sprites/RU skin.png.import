@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tun2ymru2cs0"
-path="res://.godot/imported/Tileset with cell size 256x256.png-00d38e20e5cbef5a5a0e46521cff41fa.ctex"
+uid="uid://c8aui5jab5kqs"
+path="res://.godot/imported/RU skin.png-fe167be04d62f7b657158bd841cff34b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/character_sprites/Tileset with cell size 256x256.png"
-dest_files=["res://.godot/imported/Tileset with cell size 256x256.png-00d38e20e5cbef5a5a0e46521cff41fa.ctex"]
+source_file="res://addons/sprites/RU skin.png"
+dest_files=["res://.godot/imported/RU skin.png-fe167be04d62f7b657158bd841cff34b.ctex"]
 
 [params]
 

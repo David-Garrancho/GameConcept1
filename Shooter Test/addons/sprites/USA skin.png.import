@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfaagjnamyq0i"
-path="res://.godot/imported/Weapons.png-446fad7eff5b77ca97630f7af4383361.ctex"
+uid="uid://bolpe27ytq7a4"
+path="res://.godot/imported/USA skin.png-ab33ecdaf0dc3edc318c07d30475cb35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/character_sprites/Weapons.png"
-dest_files=["res://.godot/imported/Weapons.png-446fad7eff5b77ca97630f7af4383361.ctex"]
+source_file="res://addons/sprites/USA skin.png"
+dest_files=["res://.godot/imported/USA skin.png-ab33ecdaf0dc3edc318c07d30475cb35.ctex"]
 
 [params]
 

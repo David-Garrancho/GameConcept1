@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://4oqoav3s7krh"]
 
-[ext_resource type="Script" path="res://Bullet.gd" id="1_phtiy"]
-[ext_resource type="Texture2D" uid="uid://djiydle38a74b" path="res://addons/character_sprites/Bullet.png" id="1_q56qw"]
+[ext_resource type="Script" path="res://weapons/Bullet.gd" id="1_6564u"]
+[ext_resource type="Texture2D" uid="uid://djiydle38a74b" path="res://addons/sprites/Bullet.png" id="2_assqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnp8t"]
 size = Vector2(5, 23)
@@ -9,7 +9,7 @@ size = Vector2(5, 23)
 [node name="Bullet" type="Area2D"]
 position = Vector2(1, 0)
 rotation = 1.57079
-script = ExtResource("1_phtiy")
+script = ExtResource("1_6564u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.504395, 0.18759)
@@ -18,7 +18,7 @@ shape = SubResource("RectangleShape2D_tnp8t")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.504398, 1.18759)
 scale = Vector2(0.172414, 0.252301)
-texture = ExtResource("1_q56qw")
+texture = ExtResource("2_assqv")
 
 [node name="KillTimer" type="Timer" parent="."]
 wait_time = 0.5

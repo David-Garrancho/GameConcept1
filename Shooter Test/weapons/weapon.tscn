@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bogjxockhc7ft"]
+[gd_scene load_steps=8 format=3 uid="uid://ddgvw7imb6yqu"]
 
-[ext_resource type="Script" path="res://us_player.gd" id="1_ghg5m"]
-[ext_resource type="PackedScene" uid="uid://4oqoav3s7krh" path="res://bullet.tscn" id="2_5mtq7"]
-[ext_resource type="Texture2D" uid="uid://bolpe27ytq7a4" path="res://addons/character_sprites/USA skin.png" id="2_kfr5n"]
-[ext_resource type="AudioStream" uid="uid://dmlsxpbenpi65" path="res://addons/sounds/vlc-record-2024-03-08-11h30m28s-Shooting sound.mp3-.mp3" id="4_rd03t"]
-[ext_resource type="Texture2D" uid="uid://d3kffokcrgmfp" path="res://addons/character_sprites/Muzzle Flash.png" id="5_vgjpp"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_13by8"]
-radius = 105.7
+[ext_resource type="Script" path="res://weapons/Weapon.gd" id="1_su8yy"]
+[ext_resource type="PackedScene" uid="uid://4oqoav3s7krh" path="res://weapons/bullet.tscn" id="2_fuv1q"]
+[ext_resource type="AudioStream" uid="uid://dmlsxpbenpi65" path="res://addons/sounds/vlc-record-2024-03-08-11h30m28s-Shooting sound.mp3-.mp3" id="3_135a3"]
+[ext_resource type="Texture2D" uid="uid://d3kffokcrgmfp" path="res://addons/sprites/Muzzle Flash.png" id="4_rxrmh"]
+[ext_resource type="Texture2D" uid="uid://bxtgl26j5caed" path="res://addons/sprites/M4A1.png" id="5_xaxna"]
 
 [sub_resource type="Animation" id="Animation_l70ni"]
 resource_name = "muzzle_flash"
@@ -43,28 +40,18 @@ _data = {
 "muzzle_flash": SubResource("Animation_l70ni")
 }
 
-[node name="player" type="CharacterBody2D"]
-position = Vector2(176.726, 190.642)
-script = ExtResource("1_ghg5m")
-Bullet = ExtResource("2_5mtq7")
-
-[node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2(-12.7261, -7.64246)
-shape = SubResource("CircleShape2D_13by8")
-
-[node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(93.2739, 19.3575)
-rotation = -1.5708
-texture = ExtResource("2_kfr5n")
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_su8yy")
+Bullet = ExtResource("2_fuv1q")
 
 [node name="EndOfGun" type="Marker2D" parent="."]
-position = Vector2(346.274, 44.358)
+position = Vector2(144, 0)
 
 [node name="GunDirection" type="Marker2D" parent="."]
-position = Vector2(352.274, 44.358)
+position = Vector2(150, 0)
 
 [node name="ShootingSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_rd03t")
+stream = ExtResource("3_135a3")
 volume_db = -10.0
 
 [node name="AttackCooldown" type="Timer" parent="."]
@@ -73,8 +60,9 @@ one_shot = true
 
 [node name="MuzzleFlash" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(404.274, 41.358)
-texture = ExtResource("5_vgjpp")
+position = Vector2(202, -3)
+scale = Vector2(1.2, 0.2)
+texture = ExtResource("4_rxrmh")
 region_enabled = true
 region_rect = Rect2(-1.50119, 203.65, 185.453, 176.893)
 
@@ -83,3 +71,9 @@ root_node = NodePath("../MuzzleFlash")
 libraries = {
 "": SubResource("AnimationLibrary_0hh2h")
 }
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.52588e-05, 3.8147e-06)
+rotation = 1.57079
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_xaxna")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7gni4apps3qx"
-path="res://.godot/imported/Skins.png-fbdeac3ccb126fe1ee34a2e9deda200c.ctex"
+uid="uid://cwgor0an3um33"
+path="res://.godot/imported/M4A1S.png-da75050001e1b640b476278cd0d64b8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/character_sprites/Skins.png"
-dest_files=["res://.godot/imported/Skins.png-fbdeac3ccb126fe1ee34a2e9deda200c.ctex"]
+source_file="res://addons/sprites/M4A1S.png"
+dest_files=["res://.godot/imported/M4A1S.png-da75050001e1b640b476278cd0d64b8f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8aui5jab5kqs"
-path="res://.godot/imported/RU skin.png-08795ebcf2de5c1a57e08d99cb069b25.ctex"
+uid="uid://djiydle38a74b"
+path="res://.godot/imported/Bullet.png-618059d8ccf02cb074a3041d7dee6ee3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/character_sprites/RU skin.png"
-dest_files=["res://.godot/imported/RU skin.png-08795ebcf2de5c1a57e08d99cb069b25.ctex"]
+source_file="res://addons/sprites/Bullet.png"
+dest_files=["res://.godot/imported/Bullet.png-618059d8ccf02cb074a3041d7dee6ee3.ctex"]
 
 [params]
 
