@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bolpe27ytq7a4"
-path="res://.godot/imported/USA skin.png-fdd93f867b4f2b02c8fedc84181c6127.ctex"
+uid="uid://d3kffokcrgmfp"
+path="res://.godot/imported/Muzzle Flash.png-848cc017fa9703cc61d2fd3db90c0210.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/character_sprites/USA skin.png"
-dest_files=["res://.godot/imported/USA skin.png-fdd93f867b4f2b02c8fedc84181c6127.ctex"]
+source_file="res://addons/sprites/Muzzle Flash.png"
+dest_files=["res://.godot/imported/Muzzle Flash.png-848cc017fa9703cc61d2fd3db90c0210.ctex"]
 
 [params]
 

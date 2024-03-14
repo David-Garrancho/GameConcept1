@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://boq262bt2l5hg"]
 
-[ext_resource type="Texture2D" uid="uid://bolpe27ytq7a4" path="res://addons/character_sprites/USA skin.png" id="1_ywega"]
+[ext_resource type="Texture2D" uid="uid://bolpe27ytq7a4" path="res://addons/sprites/USA skin.png" id="1_ywega"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ixfrk"]
 radius = 105.7
