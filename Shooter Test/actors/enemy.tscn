@@ -1,15 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cccj4rdf2lokp"]
+[gd_scene load_steps=8 format=3 uid="uid://cccj4rdf2lokp"]
 
 [ext_resource type="Script" path="res://actors/enemy.gd" id="1_a3kw7"]
 [ext_resource type="Texture2D" uid="uid://c8aui5jab5kqs" path="res://addons/sprites/RU skin.png" id="2_3hwdk"]
 [ext_resource type="PackedScene" uid="uid://ddgvw7imb6yqu" path="res://weapons/weapon.tscn" id="4_as52w"]
+[ext_resource type="Script" path="res://actors/AI.gd" id="5_uwbs6"]
 [ext_resource type="PackedScene" uid="uid://dy47036mldj1w" path="res://actors/health.tscn" id="5_xbuam"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13by8"]
 radius = 105.7
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnwvw"]
+radius = 1500.0
+
 [node name="Enemy" type="CharacterBody2D"]
-position = Vector2(176.726, 190.642)
+position = Vector2(0, 2)
 script = ExtResource("1_a3kw7")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
@@ -22,9 +26,18 @@ rotation = -1.5708
 texture = ExtResource("2_3hwdk")
 
 [node name="Health" parent="." instance=ExtResource("5_xbuam")]
-health = 20
+health = 80
 
 [node name="Weapon" parent="." instance=ExtResource("4_as52w")]
 position = Vector2(191.274, 30.358)
-rotation = 3.14159
 scale = Vector2(1, 1.2)
+
+[node name="AI" type="Node2D" parent="."]
+script = ExtResource("5_uwbs6")
+
+[node name="PlayerDetection" type="Area2D" parent="AI" groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI/PlayerDetection"]
+shape = SubResource("CircleShape2D_rnwvw")
+
+[connection signal="body_entered" from="AI/PlayerDetection" to="AI" method="_on_player_detection_body_entered"]

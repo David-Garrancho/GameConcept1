@@ -52,10 +52,10 @@ position = Vector2(150, 0)
 
 [node name="ShootingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_135a3")
-volume_db = -10.0
+volume_db = -15.0
 
 [node name="AttackCooldown" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.5
 one_shot = true
 
 [node name="MuzzleFlash" type="Sprite2D" parent="."]

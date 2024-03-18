@@ -10,6 +10,7 @@ size = Vector2(5, 23)
 position = Vector2(1, 0)
 rotation = 1.57079
 script = ExtResource("1_6564u")
+speed = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.504395, 0.18759)
@@ -21,7 +22,6 @@ scale = Vector2(0.172414, 0.252301)
 texture = ExtResource("2_assqv")
 
 [node name="KillTimer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
