@@ -7,11 +7,6 @@ class_name Player
 @onready var weapon = $Weapon
 @onready var health_stat = $Health
 
-signal player_fired_bullet(bullet, position, direction)
-
-func _ready(): 
-	weapon.connect("weapon_fired", shoot)
-
 
 func _physics_process(delta: float) -> void: 
 	var movement_direction := Vector2.ZERO
@@ -39,11 +34,6 @@ func _unhandled_input(event):
 		weapon.shoot()
 		
 		
-
-func shoot(bullet_instance, location: Vector2, direction: Vector2):
-	emit_signal("player_fired_bullet", bullet_instance, location, direction)
-		
-
 func handle_hit():
 	health_stat.health -= 20
 	print("Player hit! ", health_stat.health)

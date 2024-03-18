@@ -5,4 +5,5 @@ extends Node2D
 
 
 func _ready():
-	player.connect("player_fired_bullet", Callable(bullet_manager, "handle_bullet_spawned"))
+	GlobalSignals.connect("bullet_fired", Callable(bullet_manager, "handle_bullet_spawned"))
+
