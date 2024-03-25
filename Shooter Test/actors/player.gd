@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed: int = 100
-@export var run_speed: int = 150
+@export var run_speed: int = 200
 
 @onready var weapon = $Weapon
 @onready var health_stat = $Health
