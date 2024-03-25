@@ -36,8 +36,15 @@ scale = Vector2(1, 1.2)
 script = ExtResource("5_uwbs6")
 
 [node name="PlayerDetection" type="Area2D" parent="AI" groups=["enemy"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI/PlayerDetection"]
 shape = SubResource("CircleShape2D_rnwvw")
 
+[node name="PatrolTimer" type="Timer" parent="AI"]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="body_entered" from="AI/PlayerDetection" to="AI" method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="AI/PlayerDetection" to="AI" method="_on_player_detection_body_exited"]
+[connection signal="timeout" from="AI/PatrolTimer" to="AI" method="_on_patrol_timer_timeout"]

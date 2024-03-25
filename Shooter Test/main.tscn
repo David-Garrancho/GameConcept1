@@ -15,8 +15,7 @@ position = Vector2(-93.3333, -296.667)
 script = ExtResource("3_p7e4b")
 
 [node name="Enemy" parent="." instance=ExtResource("3_7pdlm")]
-position = Vector2(3153.33, 243.333)
-rotation = 2.61799
+position = Vector2(2923.33, 256.667)
 
 [node name="Player" parent="." instance=ExtResource("4_di5ne")]
 position = Vector2(270, 156.667)

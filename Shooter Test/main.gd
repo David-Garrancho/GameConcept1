@@ -5,5 +5,6 @@ extends Node2D
 
 
 func _ready():
+	randomize()
 	GlobalSignals.connect("bullet_fired", Callable(bullet_manager, "handle_bullet_spawned"))
 
