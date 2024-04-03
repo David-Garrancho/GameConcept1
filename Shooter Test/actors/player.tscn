@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb2o77fk1glqe"]
+[gd_scene load_steps=7 format=3 uid="uid://bb2o77fk1glqe"]
 
 [ext_resource type="Script" path="res://actors/player.gd" id="1_w2ta7"]
 [ext_resource type="Texture2D" uid="uid://evjspf1och42" path="res://addons/sprites/Player Skin.png" id="2_t53oi"]
 [ext_resource type="PackedScene" uid="uid://ddgvw7imb6yqu" path="res://weapons/weapon.tscn" id="4_nw38t"]
+[ext_resource type="PackedScene" uid="uid://d3add2ict0tk3" path="res://team.tscn" id="5_ac18b"]
 [ext_resource type="PackedScene" uid="uid://dy47036mldj1w" path="res://actors/health.tscn" id="6_jbj20"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13by8"]
@@ -25,3 +26,5 @@ texture = ExtResource("2_t53oi")
 
 [node name="Weapon" parent="." instance=ExtResource("4_nw38t")]
 position = Vector2(188.274, 44.358)
+
+[node name="Team" parent="." instance=ExtResource("5_ac18b")]

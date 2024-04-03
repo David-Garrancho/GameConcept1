@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cccj4rdf2lokp"]
+[gd_scene load_steps=9 format=3 uid="uid://dgq252mntnlul"]
 
-[ext_resource type="Script" path="res://actors/enemy.gd" id="1_a3kw7"]
-[ext_resource type="Texture2D" uid="uid://c8aui5jab5kqs" path="res://addons/sprites/RU skin.png" id="2_3hwdk"]
-[ext_resource type="PackedScene" uid="uid://ddgvw7imb6yqu" path="res://weapons/weapon.tscn" id="4_as52w"]
-[ext_resource type="Script" path="res://actors/AI.gd" id="5_uwbs6"]
-[ext_resource type="PackedScene" uid="uid://dy47036mldj1w" path="res://actors/health.tscn" id="5_xbuam"]
-[ext_resource type="PackedScene" uid="uid://d3add2ict0tk3" path="res://team.tscn" id="6_fca0o"]
+[ext_resource type="Script" path="res://actors/enemy.gd" id="1_q7y46"]
+[ext_resource type="Texture2D" uid="uid://evjspf1och42" path="res://addons/sprites/Player Skin.png" id="2_pgaoc"]
+[ext_resource type="PackedScene" uid="uid://dy47036mldj1w" path="res://actors/health.tscn" id="3_tauiw"]
+[ext_resource type="PackedScene" uid="uid://ddgvw7imb6yqu" path="res://weapons/weapon.tscn" id="4_a4fxe"]
+[ext_resource type="Script" path="res://actors/AI.gd" id="5_aqcvq"]
+[ext_resource type="PackedScene" uid="uid://d3add2ict0tk3" path="res://team.tscn" id="6_mo0fn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13by8"]
 radius = 110.0
@@ -13,9 +13,9 @@ radius = 110.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_rya6p"]
 radius = 1500.0
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Ally" type="CharacterBody2D"]
 position = Vector2(0, 2)
-script = ExtResource("1_a3kw7")
+script = ExtResource("1_q7y46")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2(-12.7261, -7.64246)
@@ -24,17 +24,17 @@ shape = SubResource("CircleShape2D_13by8")
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(97.274, 4.358)
 rotation = -1.5708
-texture = ExtResource("2_3hwdk")
+texture = ExtResource("2_pgaoc")
 
-[node name="Health" parent="." instance=ExtResource("5_xbuam")]
+[node name="Health" parent="." instance=ExtResource("3_tauiw")]
 health = 80
 
-[node name="Weapon" parent="." instance=ExtResource("4_as52w")]
+[node name="Weapon" parent="." instance=ExtResource("4_a4fxe")]
 position = Vector2(191.274, 30.358)
 scale = Vector2(1, 1.2)
 
 [node name="AI" type="Node2D" parent="."]
-script = ExtResource("5_uwbs6")
+script = ExtResource("5_aqcvq")
 
 [node name="DetectionZone" type="Area2D" parent="AI" groups=["enemy"]]
 visible = false
@@ -46,8 +46,7 @@ shape = SubResource("CircleShape2D_rya6p")
 wait_time = 3.0
 one_shot = true
 
-[node name="Team" parent="." instance=ExtResource("6_fca0o")]
-team = 1
+[node name="Team" parent="." instance=ExtResource("6_mo0fn")]
 
 [connection signal="body_entered" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_entered"]
 [connection signal="body_exited" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_exited"]
