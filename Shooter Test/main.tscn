@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://6jw14khg7ap7"]
+[gd_scene load_steps=6 format=3 uid="uid://6jw14khg7ap7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_v4c3h"]
 [ext_resource type="PackedScene" uid="uid://cccj4rdf2lokp" path="res://actors/enemy.tscn" id="3_7pdlm"]
 [ext_resource type="Script" path="res://BulletManager.gd" id="3_p7e4b"]
 [ext_resource type="PackedScene" uid="uid://bb2o77fk1glqe" path="res://actors/player.tscn" id="4_di5ne"]
+[ext_resource type="PackedScene" uid="uid://dgq252mntnlul" path="res://actors/Ally.tscn" id="5_oilva"]
 
 [node name="Main" type="Node2D"]
 position = Vector2(-1, 0)
@@ -15,7 +16,30 @@ position = Vector2(-93.3333, -296.667)
 script = ExtResource("3_p7e4b")
 
 [node name="Enemy" parent="." instance=ExtResource("3_7pdlm")]
-position = Vector2(2923.33, 256.667)
+position = Vector2(3366.67, 993.333)
+rotation = 3.14159
 
 [node name="Player" parent="." instance=ExtResource("4_di5ne")]
-position = Vector2(270, 156.667)
+position = Vector2(1576.67, 1450)
+
+[node name="Ally" parent="." instance=ExtResource("5_oilva")]
+position = Vector2(1943.33, 643.333)
+
+[node name="Ally2" parent="." instance=ExtResource("5_oilva")]
+position = Vector2(2006.67, 1006.67)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_7pdlm")]
+position = Vector2(3340, 306.667)
+rotation = 3.14159
+
+[node name="Enemy3" parent="." instance=ExtResource("3_7pdlm")]
+position = Vector2(3353.33, 676.667)
+rotation = 3.14159
+
+[node name="Ally3" parent="." instance=ExtResource("5_oilva")]
+position = Vector2(2323.33, 1456.67)
+rotation = -0.523598
+
+[node name="Ally4" parent="." instance=ExtResource("5_oilva")]
+position = Vector2(2106.67, 193.333)
+rotation = 0.523598
